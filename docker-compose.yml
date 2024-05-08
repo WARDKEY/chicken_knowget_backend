@@ -7,23 +7,23 @@ services:
   # - 배열 형식
   app:
     container_name: chicken_knowget_backend
+    build: .
+    image: wardkey/chicken_knowget_backend:latest
     depends_on:
       - database
     ports:
-      - "8972:8888"
-    build: .
+      - "8972:8080"
 
     environment:
       SPRING_DATASOURCE_URL: jdbc:mariadb://database:3306/knowget?useUnicode=true
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
 
+    # 서버 실행하다 문제 생기면 다시 시작
+    restart: always
     links:
       - database
     #    platform: linux/arm64 맥 호환성 추가
-
-    # 서버 실행하다 문제 생기면 다시 시작
-    restart: always
 
   # mariadb
   database:
@@ -39,8 +39,7 @@ services:
     ports:
       - "6033:3306"
 
-#    volumes:
-#      - ./src/main/resources/database/initdb.d/:/docker-entrypoint-initdb.d/
-#      - ./src/main/resources/database/initdb.d/:/docker-entrypoint-initdb.d/
+    volumes:
+      - ./src/main/resources/database/initdb.d/:/docker-entrypoint-initdb.d/
 
 
