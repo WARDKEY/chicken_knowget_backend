@@ -8,4 +8,3 @@ COPY ${JAR_FILE} backend.jar
 
 # jar파일 실행할 때 사용
 ENTRYPOINT ["java","-jar","/backend.jar"]
-
