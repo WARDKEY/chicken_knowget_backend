@@ -39,8 +39,8 @@ services:
     ports:
       - "6033:3306"
 
-    volumes:
-      - ./src/main/resources/database/initdb.d/:/docker-entrypoint-initdb.d/
-      - ./src/main/resources/database/initdb.d/:/docker-entrypoint-initdb.d/
+#    volumes:
+#      - ./src/main/resources/database/initdb.d/:/docker-entrypoint-initdb.d/
+#      - ./src/main/resources/database/initdb.d/:/docker-entrypoint-initdb.d/
 
 
