@@ -4,3 +4,9 @@
 --
 -- INSERT INTO `comment` (`content`, `post_idx`, `user_idx`) VALUES ('내용', 1, 1);
 --
+
+DELETE FROM `comment`;
+
+DELETE FROM `post`;
+
+DELETE FROM `user`;
