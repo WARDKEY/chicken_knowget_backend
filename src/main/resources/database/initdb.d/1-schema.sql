@@ -1,6 +1,6 @@
 # create schema knowget collate utf8mb4_general_ci;
 
-create database knowget;
+# create database knowget;
 
 use knowget;
 
